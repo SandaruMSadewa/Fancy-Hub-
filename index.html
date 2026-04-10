@@ -54,10 +54,18 @@
                 <a href="#" onclick="showPage('videos'); return false;" class="nav-link hover:text-brandYellow transition-colors" id="nav-videos">Videos</a>
                 <a href="#" onclick="showPage('reviews'); return false;" class="nav-link hover:text-brandPink transition-colors" id="nav-reviews">Reviews</a>
             </div>
-            <!-- Mobile Menu Button (Icon only for simplicity) -->
-            <div class="md:hidden text-brandPink text-2xl">
-                <i class="fas fa-bars"></i>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden text-brandPink text-2xl cursor-pointer p-2" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars" id="mobile-menu-icon"></i>
             </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 absolute w-full left-0 top-[73px] shadow-lg flex flex-col">
+            <a href="#" onclick="showPage('home'); toggleMobileMenu(); return false;" class="nav-link-mobile py-4 px-6 border-b border-gray-50 text-brandPink font-bold" id="nav-mobile-home">Home</a>
+            <a href="#" onclick="showPage('products'); toggleMobileMenu(); return false;" class="nav-link-mobile py-4 px-6 border-b border-gray-50 text-slate-600 font-bold" id="nav-mobile-products">Products</a>
+            <a href="#" onclick="showPage('videos'); toggleMobileMenu(); return false;" class="nav-link-mobile py-4 px-6 border-b border-gray-50 text-slate-600 font-bold" id="nav-mobile-videos">Videos</a>
+            <a href="#" onclick="showPage('reviews'); toggleMobileMenu(); return false;" class="nav-link-mobile py-4 px-6 text-slate-600 font-bold" id="nav-mobile-reviews">Reviews</a>
         </div>
     </nav>
 
@@ -98,7 +106,7 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Offer 1 -->
                 <div class="group flex flex-col sm:flex-row bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brandYellow/20 transition-all duration-300">
-                    <img src="5 Ft XXl Chubby.jpg" alt="5 Ft (XXL) Teddy" class="w-full sm:w-56 h-56 sm:h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src="5 Ft XXl Chubby.jpg" alt="5 Ft (XXL) Teddy" class="w-full sm:w-56 h-72 sm:h-auto object-contain bg-slate-50 p-2 group-hover:scale-105 transition-transform duration-500" />
                     <div class="p-8 flex flex-col justify-center w-full relative">
                         <span class="absolute top-4 right-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">-27% OFF</span>
                         <h3 class="text-2xl font-bold mb-2 text-slate-800">5 Ft (XXL) Teddy</h3>
@@ -115,7 +123,7 @@
 
                 <!-- Offer 2 -->
                 <div class="group flex flex-col sm:flex-row bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brandYellow/20 transition-all duration-300">
-                    <img src="Choc Pack 3000.jpg" alt="Fancy Gift Box" class="w-full sm:w-56 h-56 sm:h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src="Choc Pack 3000.jpg" alt="Fancy Gift Box" class="w-full sm:w-56 h-72 sm:h-auto object-contain bg-slate-50 p-2 group-hover:scale-105 transition-transform duration-500" />
                     <div class="p-8 flex flex-col justify-center w-full relative">
                         <span class="absolute top-4 right-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">-42% OFF</span>
                         <h3 class="text-2xl font-bold mb-2 text-slate-800">Fancy Gift Box</h3>
@@ -150,8 +158,8 @@
                 
                 <!-- Product 1 (New Blue Teddy) -->
                 <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
-                        <img src="2.5 feet .jpg" alt="2.5 Ft Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative flex justify-center">
+                        <img src="2.5 feet .jpg" alt="2.5 Ft Teddy" class="w-full h-64 object-contain p-2 group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <span class="text-xs font-bold text-brandTeal bg-brandTeal/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
                     <h3 class="text-lg font-bold text-slate-800 mb-2">2.5 Ft Teddy</h3>
@@ -164,9 +172,9 @@
 
                 <!-- Product 2 (New Yellow Teddy) -->
                 <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative flex justify-center">
                         <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">SALE</span>
-                        <img src="2.5 feet teddy.jpg" alt="2.5 Ft Teddy Bear" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src="2.5 feet teddy.jpg" alt="2.5 Ft Teddy Bear" class="w-full h-64 object-contain p-2 group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <span class="text-xs font-bold text-brandYellow bg-brandYellow/20 text-yellow-700 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
                     <h3 class="text-lg font-bold text-slate-800 mb-2">2.5 Ft Teddy Bear</h3>
@@ -182,9 +190,9 @@
 
                 <!-- Product 3 (New XL Red/White Teddy) -->
                 <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative flex justify-center">
                         <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">DISCOUNT</span>
-                        <img src="6 feet XXL.jpg" alt="5 Ft. (XL) Chubby Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src="6 feet XXL.jpg" alt="5 Ft. (XL) Chubby Teddy" class="w-full h-64 object-contain p-2 group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <span class="text-xs font-bold text-brandPink bg-brandPink/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
                     <h3 class="text-lg font-bold text-slate-800 mb-2">5 Ft. (XL) Chubby Teddy</h3>
@@ -200,9 +208,9 @@
 
                 <!-- Product 4 (New 6 Ft XXL Blue Teddy) -->
                 <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative flex justify-center">
                         <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">SALE</span>
-                        <img src="6  feet XXL Chubby.jpg" alt="6 Ft (XXL) chubby Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src="6  feet XXL Chubby.jpg" alt="6 Ft (XXL) chubby Teddy" class="w-full h-64 object-contain p-2 group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <span class="text-xs font-bold text-brandTeal bg-brandTeal/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
                     <h3 class="text-lg font-bold text-slate-800 mb-2">6 Ft (XXL) chubby Teddy</h3>
@@ -344,21 +352,48 @@
             }
 
             // Update navigation active states
-            const navLinks = document.querySelectorAll('.nav-link');
+            const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
             navLinks.forEach(link => {
                 link.classList.remove('text-brandPink', 'text-brandTeal', 'text-brandYellow');
+                link.classList.add('text-slate-600');
             });
 
             // Set specific color for active nav link based on the page
             const activeLink = document.getElementById('nav-' + pageId);
+            const activeMobileLink = document.getElementById('nav-mobile-' + pageId);
+            
             if(activeLink) {
+                activeLink.classList.remove('text-slate-600');
                 if(pageId === 'home' || pageId === 'reviews') activeLink.classList.add('text-brandPink');
                 if(pageId === 'products') activeLink.classList.add('text-brandTeal');
                 if(pageId === 'videos') activeLink.classList.add('text-brandYellow');
             }
 
+            if(activeMobileLink) {
+                activeMobileLink.classList.remove('text-slate-600');
+                if(pageId === 'home' || pageId === 'reviews') activeMobileLink.classList.add('text-brandPink');
+                if(pageId === 'products') activeMobileLink.classList.add('text-brandTeal');
+                if(pageId === 'videos') activeMobileLink.classList.add('text-brandYellow');
+            }
+
             // Scroll to top when changing pages
             window.scrollTo(0, 0);
+        }
+
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // changes to X icon
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); // changes back to Hamburger icon
+            }
         }
 
         function buyViaWhatsApp(itemName) {
