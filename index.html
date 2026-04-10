@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fancy House</title>
+    <!-- Tailwind CSS (For Modern Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuring exact logo colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#F1477E',
+                        brandTeal: '#48B2A4',
+                        brandYellow: '#F9B838',
+                        whatsapp: '#25D366',
+                        whatsappHover: '#20bd5a'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome (For Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .page-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-brandPink selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" onclick="showPage('home')">
+                <!-- Logo representation based on colors -->
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 border-4 border-brandPink shadow-sm">
+                    <span class="text-brandTeal font-bold text-[10px] text-center leading-tight uppercase tracking-wider">Fancy<br><span class="text-brandPink">House</span></span>
+                </div>
+                <span class="text-2xl font-extrabold text-slate-800">
+                    The <span class="text-brandPink">Fancy</span> House
+                </span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-600">
+                <a href="#" onclick="showPage('home'); return false;" class="nav-link hover:text-brandPink transition-colors text-brandPink" id="nav-home">Home</a>
+                <a href="#" onclick="showPage('products'); return false;" class="nav-link hover:text-brandTeal transition-colors" id="nav-products">Products</a>
+                <a href="#" onclick="showPage('videos'); return false;" class="nav-link hover:text-brandYellow transition-colors" id="nav-videos">Videos</a>
+                <a href="#" onclick="showPage('reviews'); return false;" class="nav-link hover:text-brandPink transition-colors" id="nav-reviews">Reviews</a>
+            </div>
+            <!-- Mobile Menu Button (Icon only for simplicity) -->
+            <div class="md:hidden text-brandPink text-2xl">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main id="main-content">
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page-section active">
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 px-4 text-center max-w-5xl mx-auto overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-0 left-10 w-64 h-64 bg-brandPink/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 right-10 w-64 h-64 bg-brandTeal/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-64 h-64 bg-brandYellow/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+
+        <div class="relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-slate-900">
+                Spread Love with <br/>
+                <span class="text-brandPink">Fancy House.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Premium Teddy Bears & Curated Gift Boxes for your loved ones. Make every moment special and colorful with The Fancy House.
+            </p>
+            <a href="#" onclick="showPage('products'); return false;" class="inline-flex items-center gap-3 bg-brandPink text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-rose-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-brandPink/30">
+                <i class="fas fa-gift text-xl"></i> Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="py-20 bg-brandYellow/10 border-y border-brandYellow/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-center md:justify-start gap-3 mb-12">
+                <i class="fas fa-tags text-brandYellow text-4xl bg-white p-3 rounded-2xl shadow-sm"></i>
+                <h2 class="text-4xl font-extrabold text-slate-800">Special Offers</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Offer 1 -->
+                <div class="group flex flex-col sm:flex-row bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brandYellow/20 transition-all duration-300">
+                    <img src="5 Ft XXl Chubby.jpg" alt="5 Ft (XXL) Teddy" class="w-full sm:w-56 h-56 sm:h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="p-8 flex flex-col justify-center w-full relative">
+                        <span class="absolute top-4 right-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">-27% OFF</span>
+                        <h3 class="text-2xl font-bold mb-2 text-slate-800">5 Ft (XXL) Teddy</h3>
+                        <p class="text-slate-500 text-sm mb-4">A giant and cuddly brown teddy bear perfect for a massive surprise.</p>
+                        <div class="flex items-end gap-3 mb-6">
+                            <span class="text-3xl font-extrabold text-brandPink">Rs. 10,500</span>
+                            <span class="text-base text-slate-400 line-through mb-1">Rs. 14,500</span>
+                        </div>
+                        <button onclick="buyViaWhatsApp('5 Ft (XXL) Teddy - Rs.10500')" class="flex items-center justify-center gap-2 w-full bg-whatsapp hover:bg-whatsappHover text-white px-4 py-3 rounded-xl font-bold transition-colors shadow-md shadow-whatsapp/30">
+                            <i class="fab fa-whatsapp text-xl"></i> Buy via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="group flex flex-col sm:flex-row bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brandYellow/20 transition-all duration-300">
+                    <img src="Choc Pack 3000.jpg" alt="Fancy Gift Box" class="w-full sm:w-56 h-56 sm:h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="p-8 flex flex-col justify-center w-full relative">
+                        <span class="absolute top-4 right-4 bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full">-42% OFF</span>
+                        <h3 class="text-2xl font-bold mb-2 text-slate-800">Fancy Gift Box</h3>
+                        <p class="text-slate-500 text-sm mb-4">A romantic heart-shaped gift box filled with chocolates and a mug.</p>
+                        <div class="flex items-end gap-3 mb-6">
+                            <span class="text-3xl font-extrabold text-brandPink">Rs. 2,000</span>
+                            <span class="text-base text-slate-400 line-through mb-1">Rs. 3,500</span>
+                        </div>
+                        <button onclick="buyViaWhatsApp('Fancy Gift Box - Rs.2000')" class="flex items-center justify-center gap-2 w-full bg-whatsapp hover:bg-whatsappHover text-white px-4 py-3 rounded-xl font-bold transition-colors shadow-md shadow-whatsapp/30">
+                            <i class="fab fa-whatsapp text-xl"></i> Buy via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        </div> <!-- End of Home Page -->
+
+        <!-- PRODUCTS PAGE -->
+        <div id="page-products" class="page-section">
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-center md:justify-start gap-3 mb-12">
+                <i class="fas fa-heart text-brandPink text-4xl bg-brandPink/10 p-3 rounded-2xl"></i>
+                <h2 class="text-4xl font-extrabold text-slate-800">Our Collections</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 (New Blue Teddy) -->
+                <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                        <img src="2.5 feet .jpg" alt="2.5 Ft Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <span class="text-xs font-bold text-brandTeal bg-brandTeal/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">2.5 Ft Teddy</h3>
+                    <p class="text-slate-500 text-sm mb-4 leading-relaxed line-clamp-2">A beautiful soft blue 2.5 ft teddy bear, perfect for warm hugs and making memories.</p>
+                    <p class="text-2xl font-extrabold text-brandPink mb-5">Rs. 2,300</p>
+                    <button onclick="buyViaWhatsApp('2.5 Ft Teddy (Blue) - Rs.2300')" class="flex items-center justify-center gap-2 w-full bg-slate-100 hover:bg-whatsapp hover:text-white text-slate-700 px-4 py-3 rounded-xl font-bold transition-colors">
+                        <i class="fab fa-whatsapp text-lg"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- Product 2 (New Yellow Teddy) -->
+                <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                        <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">SALE</span>
+                        <img src="2.5 feet teddy.jpg" alt="2.5 Ft Teddy Bear" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <span class="text-xs font-bold text-brandYellow bg-brandYellow/20 text-yellow-700 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">2.5 Ft Teddy Bear</h3>
+                    <p class="text-slate-500 text-sm mb-4 leading-relaxed line-clamp-2">Bright and cheerful yellow teddy bear. Soft, huggable, and a perfect companion.</p>
+                    <div class="flex items-end gap-2 mb-5">
+                        <p class="text-2xl font-extrabold text-brandPink">Rs. 2,800</p>
+                        <p class="text-sm text-slate-400 line-through mb-1">Rs. 3,250</p>
+                    </div>
+                    <button onclick="buyViaWhatsApp('2.5 Ft Teddy Bear (Yellow) - Rs.2800')" class="flex items-center justify-center gap-2 w-full bg-slate-100 hover:bg-whatsapp hover:text-white text-slate-700 px-4 py-3 rounded-xl font-bold transition-colors">
+                        <i class="fab fa-whatsapp text-lg"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- Product 3 (New XL Red/White Teddy) -->
+                <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                        <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">DISCOUNT</span>
+                        <img src="6 feet XXL.jpg" alt="5 Ft. (XL) Chubby Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <span class="text-xs font-bold text-brandPink bg-brandPink/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">5 Ft. (XL) Chubby Teddy</h3>
+                    <p class="text-slate-500 text-sm mb-4 leading-relaxed line-clamp-2">Giant 5 feet chubby teddy bear in vibrant red and white. A massive surprise for your loved ones!</p>
+                    <div class="flex items-end gap-2 mb-5">
+                        <p class="text-2xl font-extrabold text-brandPink">Rs. 8,500</p>
+                        <p class="text-sm text-slate-400 line-through mb-1">Rs. 13,500</p>
+                    </div>
+                    <button onclick="buyViaWhatsApp('5 Ft. (XL) Chubby Teddy - Rs.8500')" class="flex items-center justify-center gap-2 w-full bg-slate-100 hover:bg-whatsapp hover:text-white text-slate-700 px-4 py-3 rounded-xl font-bold transition-colors">
+                        <i class="fab fa-whatsapp text-lg"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- Product 4 (New 6 Ft XXL Blue Teddy) -->
+                <div class="bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-5 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-5 bg-slate-50 relative">
+                        <span class="absolute top-3 right-3 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full z-10">SALE</span>
+                        <img src="6  feet XXL Chubby.jpg" alt="6 Ft (XXL) chubby Teddy" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <span class="text-xs font-bold text-brandTeal bg-brandTeal/10 px-3 py-1.5 rounded-full inline-block mb-3">Teddy Bears</span>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">6 Ft (XXL) chubby Teddy</h3>
+                    <p class="text-slate-500 text-sm mb-4 leading-relaxed line-clamp-2">A giant 6 feet XXL soft blue teddy bear. The ultimate huggable companion for your special ones!</p>
+                    <div class="flex items-end gap-2 mb-5">
+                        <p class="text-2xl font-extrabold text-brandPink">Rs. 14,000</p>
+                        <p class="text-sm text-slate-400 line-through mb-1">Rs. 16,500</p>
+                    </div>
+                    <button onclick="buyViaWhatsApp('6 Ft (XXL) chubby Teddy - Rs.14000')" class="flex items-center justify-center gap-2 w-full bg-slate-100 hover:bg-whatsapp hover:text-white text-slate-700 px-4 py-3 rounded-xl font-bold transition-colors">
+                        <i class="fab fa-whatsapp text-lg"></i> Order Now
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        </div> <!-- End of Products Page -->
+
+        <!-- VIDEOS PAGE -->
+        <div id="page-videos" class="page-section">
+
+    <!-- Facebook Videos Section -->
+    <section id="videos" class="py-24 bg-brandTeal/5 border-y border-brandTeal/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-center md:justify-start gap-3 mb-12">
+                <i class="fas fa-play text-brandTeal text-4xl bg-white p-3 rounded-2xl shadow-sm"></i>
+                <h2 class="text-4xl font-extrabold text-slate-800">Watch Our Surprise</h2>
+            </div>
+            <!-- Adjusted grid for Facebook Reels (Vertical format: 4 columns on large screens) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Video 1 -->
+                <div class="aspect-[9/16] bg-black rounded-3xl flex items-center justify-center border border-brandTeal/20 shadow-md overflow-hidden relative">
+                    <video src="reel 1.mp4" controls class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Video 2 -->
+                <div class="aspect-[9/16] bg-black rounded-3xl flex items-center justify-center border border-brandTeal/20 shadow-md overflow-hidden relative">
+                    <video src="reel 2.mp4" controls class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Video 3 -->
+                <div class="aspect-[9/16] bg-black rounded-3xl flex items-center justify-center border border-brandTeal/20 shadow-md overflow-hidden relative">
+                    <video src="reel 3.mp4" controls class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Video 4 -->
+                <div class="aspect-[9/16] bg-black rounded-3xl flex items-center justify-center border border-brandTeal/20 shadow-md overflow-hidden relative">
+                    <video src="reel 4.mp4" controls class="w-full h-full object-cover"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        </div> <!-- End of Videos Page -->
+
+        <!-- REVIEWS PAGE -->
+        <div id="page-reviews" class="page-section">
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Customer Feedbacks</h2>
+                <p class="text-lg text-slate-500">Happy smiles delivered all around Sri Lanka</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Feedback 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-brandYellow/20"></i>
+                    <div class="flex gap-1 mb-4 text-brandYellow text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"The gift box was amazing! The packaging was so neat and beautiful. The pink theme was exactly what I wanted. Highly recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brandPink/20 rounded-full flex items-center justify-center text-brandPink font-bold">D</div>
+                        <p class="font-bold text-slate-800">Dilini S.</p>
+                    </div>
+                </div>
+
+                <!-- Feedback 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-brandTeal/20"></i>
+                    <div class="flex gap-1 mb-4 text-brandYellow text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Bought a giant teddy for my girlfriend. Quality is top-notch and the delivery was incredibly fast. Customer service is super friendly."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brandTeal/20 rounded-full flex items-center justify-center text-brandTeal font-bold">K</div>
+                        <p class="font-bold text-slate-800">Kavindu M.</p>
+                    </div>
+                </div>
+
+                <!-- Feedback 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-sm relative">
+                    <i class="fas fa-quote-left absolute top-6 right-6 text-4xl text-brandPink/20"></i>
+                    <div class="flex gap-1 mb-4 text-brandYellow text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Customer service is excellent. They customized the gift box exactly how I wanted with beautiful yellow and teal ribbons."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brandYellow/30 rounded-full flex items-center justify-center text-amber-700 font-bold">S</div>
+                        <p class="font-bold text-slate-800">Sanduni P.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        </div> <!-- End of Reviews Page -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t-4 border-brandPink">
+        <div class="max-w-6xl mx-auto px-4 text-center flex flex-col justify-center items-center">
+            <div class="text-2xl font-extrabold text-white mb-4">
+                The <span class="text-brandPink">Fancy</span> House
+            </div>
+            <div class="flex gap-4 justify-center mb-6">
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brandPink hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brandPink hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-whatsapp hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 The Fancy House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for WhatsApp Functionality and Page Navigation -->
+    <script>
+        // Page Navigation Logic
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            const selectedPage = document.getElementById('page-' + pageId);
+            if(selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Update navigation active states
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-brandPink', 'text-brandTeal', 'text-brandYellow');
+            });
+
+            // Set specific color for active nav link based on the page
+            const activeLink = document.getElementById('nav-' + pageId);
+            if(activeLink) {
+                if(pageId === 'home' || pageId === 'reviews') activeLink.classList.add('text-brandPink');
+                if(pageId === 'products') activeLink.classList.add('text-brandTeal');
+                if(pageId === 'videos') activeLink.classList.add('text-brandYellow');
+            }
+
+            // Scroll to top when changing pages
+            window.scrollTo(0, 0);
+        }
+
+        function buyViaWhatsApp(itemName) {
+            // මෙතනට ඔයාගේ WhatsApp නම්බර් එක දෙන්න (country code එකත් එක්ක. උදා: 94770000000)
+            const whatsappNumber = "94700000000"; 
+            const message = `Hi! I'm interested in buying the ${itemName} from The Fancy House.`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            // අලුත් ටැබ් එකකින් WhatsApp open වෙනවා
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
